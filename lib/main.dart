@@ -41,21 +41,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text("直書きもできる"),
-          actions: <Widget>[Icon(Icons.add), Icon(Icons.share)]),
-      body: Container(
-        height: double.infinity, //全体
-        color: Colors.red,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: <Widget>[
-              Text(
-                '人生にもアプリにも',//最後に , をつけるとこのように改行される
-              ),
-              Text('空白が大事'),
-            ],
-          ),
+        title: Text("直書きもできる"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text('次へ'),
+          onPressed: (){
+            //ここに押したら反応するコードを書く
+            //画面遷移のコードを書く
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
