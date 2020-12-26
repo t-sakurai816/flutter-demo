@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Navigator.push(
               context,
               MaterialPageRoute(
+                //呼び出すクラスは画面遷移したいファイル名
                 builder: (context) => NextPage(),
               ),
             );
