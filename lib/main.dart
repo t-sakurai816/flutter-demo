@@ -40,6 +40,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String text = '次へ';
 
+  final myFocusNode = FocusNode();
+
+  String name;
+
+  final myController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,41 +55,32 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         width: double.infinity, //幅すべて
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center, //中央寄せ
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              width: double.infinity,
-              child: Text(
-                'Sakurai',
-                textAlign: TextAlign.end,
-                style: TextStyle(
-                  fontSize: 40,
-                  color: Colors.green,
-                  backgroundColor: Colors.lightGreenAccent,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic,
-                  decoration: TextDecoration.underline,
-                ),
+            TextField(
+              autofocus: true, //このアプリを開いたら自動でキーボードが出る
+              decoration: InputDecoration(
+                hintText: '名前を入力してください',
               ),
+              onChanged: (text) {
+                name = text;
+                print("First text field: $text");
+              },
             ),
-            DefaultTextStyle( //これの下に入れるtextは全部同じstyleになる
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.blue,
-                backgroundColor: Colors.red,
+            TextField(
+              controller: myController,
+              decoration: InputDecoration(
+                hintText: '趣味を入力',
               ),
-              child: Column(
-                children: [
-                  Text(
-                    'Takumi',
-                  ),
-                  Text(
-                    'Takumin',
-                  )
-                ],
-              ),
+              focusNode: myFocusNode,
             ),
+            RaisedButton(
+              child: Text('サインアップ'),
+              onPressed: () {
+                // //ここにフォーカスするためのコード
+                // myFocusNode.requestFocus();
+                print(myController.text);
+              },
+            )
           ],
         ),
       ),
