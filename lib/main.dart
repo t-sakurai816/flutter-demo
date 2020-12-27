@@ -47,23 +47,28 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("直書きもできる"),
       ),
       body: Center(
-        child: RaisedButton(
-          child: Text(text),
-          onPressed: () async {
-            //ここに押したら反応するコードを書く
-            //画面遷移のコードを書く
-            final result = await Navigator.push(
-              context,
-              MaterialPageRoute(
-                //呼び出すクラスは画面遷移したいファイル名
-                builder: (context) => NextPage('Sakurai'),
-              ),
-            );
-            setState(() {
-              text = result;
-            });
-            print(result);
-          },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, //中央寄せ
+          children: [
+            RaisedButton(
+              child: Text(text),
+              onPressed: () async {
+                //ここに押したら反応するコードを書く
+                //画面遷移のコードを書く
+                final result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    //呼び出すクラスは画面遷移したいファイル名
+                    builder: (context) => NextPage('Sakurai'),
+                  ),
+                );
+                setState(() {
+                  text = result;
+                });
+                print(result);
+              },
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
