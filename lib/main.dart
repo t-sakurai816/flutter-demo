@@ -52,7 +52,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center, //中央寄せ
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            
+            Icon(
+              Icons.liquor,
+              size: 200,
+            ),
             RaisedButton(
               child: Text(text),
               onPressed: () async {
