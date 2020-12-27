@@ -46,10 +46,14 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("直書きもできる"),
       ),
-      body: Center(
+      body: Container(
+        width: double.infinity, //幅すべて
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center, //中央寄せ
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Image.network(
+                'https://avatars2.githubusercontent.com/u/53470730?s=460&u=e4dc5d4e559b0cfc32d7794e4f76327d28f447ab&v=4'),
             RaisedButton(
               child: Text(text),
               onPressed: () async {
