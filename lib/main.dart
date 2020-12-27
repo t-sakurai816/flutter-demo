@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center, //中央寄せ
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset('images/sakurai-icon.JPG'),
+            
             RaisedButton(
               child: Text(text),
               onPressed: () async {
