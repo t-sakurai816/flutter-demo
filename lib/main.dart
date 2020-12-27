@@ -51,7 +51,40 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center, //中央寄せ
           crossAxisAlignment: CrossAxisAlignment.center,
-          
+          children: [
+            Container(
+              width: double.infinity,
+              child: Text(
+                'Sakurai',
+                textAlign: TextAlign.end,
+                style: TextStyle(
+                  fontSize: 40,
+                  color: Colors.green,
+                  backgroundColor: Colors.lightGreenAccent,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            DefaultTextStyle( //これの下に入れるtextは全部同じstyleになる
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.blue,
+                backgroundColor: Colors.red,
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    'Takumi',
+                  ),
+                  Text(
+                    'Takumin',
+                  )
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
