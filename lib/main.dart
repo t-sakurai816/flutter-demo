@@ -52,8 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center, //中央寄せ
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.network(
-                'https://avatars2.githubusercontent.com/u/53470730?s=460&u=e4dc5d4e559b0cfc32d7794e4f76327d28f447ab&v=4'),
+            Image.asset('images/sakurai-icon.JPG'),
             RaisedButton(
               child: Text(text),
               onPressed: () async {
