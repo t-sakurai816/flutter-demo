@@ -78,7 +78,15 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 // //ここにフォーカスするためのコード
                 // myFocusNode.requestFocus();
-                print(myController.text);
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      // content: Text(myController.text),
+                      content: Text(name), //nameに65行目で都度都度入れているので、ここで表示される
+                    );
+                  },
+                );
               },
             )
           ],
