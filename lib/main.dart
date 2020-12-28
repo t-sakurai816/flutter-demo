@@ -42,8 +42,19 @@ class _MyHomePageState extends State<MyHomePage> {
           //スクロールできる。下に伸びても大丈夫
           children: <Widget>[
             ListTile(
-              leading: Icon(Icons.map),
-              title: Text('Map'),
+              leading: Icon(Icons.info),
+              title: Text('お問い合わせ'),
+              trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                //画面遷移のコードを書く
+                //タップしたら遷移
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NextPage('Takumi'),
+                  ),
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.photo_album),
