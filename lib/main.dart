@@ -42,14 +42,20 @@ class _MyHomePageState extends State<MyHomePage> {
         child: GridView.count(
           // Create a grid with 2 columns. If you change the scrollDirection to
           // horizontal, this produces 2 rows.
-          crossAxisCount: 2, //横のリストの数
+          crossAxisCount: 3, //横のリストの数
           // Generate 100 widgets that display their index in the List.
           children: List.generate(100, (index) {
-            return Center(
-              child: Text(
-                'Item $index',
-                style: Theme.of(context).textTheme.headline5,
-              ),
+            return Column(
+              children: [
+                Expanded( //画像のサイズをいい感じにする
+                  child: Image.network(
+                      'https://avatars2.githubusercontent.com/u/53470730?s=460&u=e4dc5d4e559b0cfc32d7794e4f76327d28f447ab&v=4'),
+                ),
+                Text(
+                  'Item $index',
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+              ],
             );
           }),
         ),
