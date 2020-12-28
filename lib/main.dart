@@ -30,21 +30,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  String text = '次へ';
-
-  final myFocusNode = FocusNode();
-
-  String name;
-
-  final myController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -53,44 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("直書きもできる"),
       ),
       body: Container(
-        width: double.infinity, //幅すべて
-        child: Column(
-          children: [
-            TextField(
-              autofocus: true, //このアプリを開いたら自動でキーボードが出る
-              decoration: InputDecoration(
-                hintText: '名前を入力してください',
-              ),
-              onChanged: (text) {
-                name = text;
-                print("First text field: $text");
-              },
-            ),
-            TextField(
-              controller: myController,
-              decoration: InputDecoration(
-                hintText: '趣味を入力',
-              ),
-              focusNode: myFocusNode,
-            ),
-            RaisedButton(
-              child: Text('サインアップ'),
-              onPressed: () {
-                // //ここにフォーカスするためのコード
-                // myFocusNode.requestFocus();
-                showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      // content: Text(myController.text),
-                      content: Text(name), //nameに65行目で都度都度入れているので、ここで表示される
-                    );
-                  },
-                );
-              },
-            )
-          ],
-        ),
+        width: double.infinity,
+        child: Container(),
       ),
     );
   }
